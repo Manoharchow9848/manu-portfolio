@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg-custom {
-    background-image: url('../public/bg-dark.jpg'); /* Adjust the path as necessary */
+    background-image: url('./assets/bg-dark.jpg'); /* Adjust the path as necessary */
     background-size: cover; /* Cover the entire area */
     height: 100vh;
     width: 100vw;
