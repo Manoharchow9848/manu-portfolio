@@ -62,6 +62,19 @@ const Project = () => {
       ],
       link: 'https://python-chat-1pte.onrender.com',
     },
+    {
+      title:'Medi-Track-App (Android) React native',
+      images: [
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/5.jpg?alt=media&token=467219ca-beb9-4b1c-aa62-d6a44a164579',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/1.jpg?alt=media&token=f953ebac-5760-4d98-ba6c-63b099b0ad3d',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/2.jpg?alt=media&token=480a0ca6-cebb-44f6-8495-b354b23a9837',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/3.jpg?alt=media&token=27c6aa76-9ac5-45cb-bd3c-94a1b1174ad1',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/4.jpg?alt=media&token=f053a438-cdc9-47fa-877b-128e636484a0',
+
+
+      ],
+      link:'https://expo.dev/artifacts/eas/bQKvH5fVtyJ91MbZsxLx6L.apk'
+    }
     
     // Add more projects as needed
   ];
