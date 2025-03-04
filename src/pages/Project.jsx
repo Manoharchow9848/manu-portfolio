@@ -81,7 +81,7 @@ const Project = () => {
 
   return (
     <div className="h-full w-full ml-80 mt-28 mr-5 justify-center">
-      <h1 className="text-3xl mb-8 text-white"><span style={{ color: `${color}` }}  >My</span> Projects <span style={{ color: `${color}` }}>{`${projects.length}`}</span>
+      <h1 className="text-3xl mb-8 text-white"><span style={{ color: `${color}` }}  >My</span> Projects <span style={{ color: `${color}` }}>{`<${projects.length}/>`}</span>
       </h1>
       <div className="grid grid-cols-3 gap-4 " style={{ width: "1150px" }}>
         {projects.map((project, index) => (
