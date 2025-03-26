@@ -74,7 +74,34 @@ const Project = () => {
 
       ],
       link:'https://expo.dev/artifacts/eas/bQKvH5fVtyJ91MbZsxLx6L.apk'
+    },{
+      title:'Spotify Clone',
+      images: [
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/s1.png?alt=media&token=2ceadfd5-e88e-42c2-98c2-adfba01372c3',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/s2.png?alt=media&token=5d25c757-1161-4432-b1c2-90748fa8b872',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/s3.png?alt=media&token=a3b1aa79-6bed-4503-849b-1d8c85fd3a03',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/s4.png?alt=media&token=fc84d897-617d-40fc-acdf-5256c34170ab',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/s5.png?alt=media&token=f680ed29-635b-47f9-b0fc-5a98acdbe932',
+
+
+      ],
+      link:'https://spotify-mc.onrender.com/'
+    },{
+      title:'Review Hive - (Store Rating Platform)',
+      images: [
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/r1.png?alt=media&token=30348f0f-7d7e-4bad-8f49-37647c5e0e1b',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/r2.png?alt=media&token=d8814152-ddc3-4412-ac7e-0caee78a3fa9',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/r3.png?alt=media&token=8152e2ca-101b-4786-99a0-6ee803ebe5a0',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/r4.png?alt=media&token=c8ed47f7-d245-44c5-9e71-ddc03c138f0d',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/r5.png?alt=media&token=b8e113aa-6a03-410c-8e2d-b80c92cfdde3',
+        'https://firebasestorage.googleapis.com/v0/b/politicsapp-ffb44.appspot.com/o/r6.png?alt=media&token=ff502914-fdbd-4435-87c2-8fcc4b3bfc87'
+
+
+      ],
+      link:'https://spotify-mc.onrender.com/'
     }
+    
+
     
     // Add more projects as needed
   ];
@@ -107,7 +134,7 @@ const ProjectCard = ({ project }) => {
   }, [project.images.length]);
 
   return (
-    <div className="relative group bg-gray-800 p-4 rounded-lg overflow-hidden">
+    <div className="relative group mb-4 bg-gray-800 p-4 rounded-lg overflow-hidden">
       <img
         src={project.images[currentImage]}
         alt={project.title}
