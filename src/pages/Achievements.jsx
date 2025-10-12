@@ -1,4 +1,4 @@
-import { FaEye } from "react-icons/fa"; // Import the view icon
+import { FaEye } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { ColorContext } from "../context/ColorContext";
 
@@ -22,50 +22,44 @@ const Achievements = () => {
   ];
 
   return (
-     <div className="h-full w-full ml-80 mt-28 mr-5 justify-center text-white">
-      <div className="flex">
-        {/* Achievements Section */}
-        <div className="w-full p-8">
-          <h1 className="text-2xl font-bold mb-8">
-            <span style={{ color: `${color}` }}>My </span>Achievements
-          </h1>
+    <div className="min-h-screen w-full flex text-white">
+      {/* Sidebar placeholder */}
+      <div className="hidden md:block w-80 "></div>
 
-          <div className="grid grid-cols-3 gap-6" style={{ width: "1150px" }}>
-            {certificates.map((certificate) => (
-              <a
-                key={certificate.id}
-                href={certificate.link} // Link to the certificate
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative shadow-md rounded-lg overflow-hidden cursor-pointer bg-white bg-opacity-10 border border-dotted border-white"
-                onMouseEnter={() => setHovered(certificate.id)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {/* Certificate Image */}
-                <img
-                  src={certificate.image}
-                  alt={certificate.title}
-                  className={`w-full h-96 object-cover ${
-                    hovered === certificate.id ? "rotate-left" : ""
-                  }`} // Add "rotate-left" class on hover
-                />
+      {/* Main content */}
+      <div className="flex-1 mt-24 px-4 md:px-8">
+        <h1 className="text-2xl font-bold mb-8 text-center md:text-left">
+          <span style={{ color }}>My </span>Achievements
+        </h1>
 
-                {/* View Icon */}
-                {hovered === certificate.id && (
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                    <FaEye className="text-white text-4xl" />
-                  </div>
-                )}
-
-                {/* Certificate Title */}
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
-                    {certificate.title}
-                  </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {certificates.map((certificate) => (
+            <a
+              key={certificate.id}
+              href={certificate.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative shadow-md rounded-lg overflow-hidden cursor-pointer bg-white bg-opacity-10 border border-dotted border-white hover:scale-[1.02] transition-transform duration-300"
+              onMouseEnter={() => setHovered(certificate.id)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <img
+                src={certificate.image}
+                alt={certificate.title}
+                className="w-full h-64 sm:h-72 md:h-80 object-cover"
+              />
+              {hovered === certificate.id && (
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                  <FaEye className="text-white text-4xl" />
                 </div>
-              </a>
-            ))}
-          </div>
+              )}
+              <div className="p-4">
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-center md:text-left">
+                  {certificate.title}
+                </h3>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </div>

@@ -103,17 +103,27 @@ const Project = () => {
     
 
     
-    // Add more projects as needed
+   
   ];
 
-  return (
-    <div className="h-full w-full ml-80 mt-28 mr-5 justify-center">
-      <h1 className="text-3xl mb-8 text-white"><span style={{ color: `${color}` }}  >My</span> Projects <span style={{ color: `${color}` }}>{`<${projects.length}/>`}</span>
-      </h1>
-      <div className="grid grid-cols-3 gap-4 " style={{ width: "1150px" }}>
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+   return (
+    <div className="min-h-screen w-full flex flex-col md:flex-row mt-28 px-4 md:px-8">
+      {/* Optional sidebar space */}
+      <div className="hidden md:block md:w-80"></div>
+
+      {/* Main content */}
+      <div className="flex-1">
+        <h1 className="text-3xl mb-8 text-white text-center md:text-left">
+          <span style={{ color }}>My</span> Projects{' '}
+          <span style={{ color }}>{`<${projects.length}/>`}</span>
+        </h1>
+
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -124,37 +134,37 @@ const ProjectCard = ({ project }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const { color } = useContext(ColorContext);
 
-  // Cycle through images every second
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevIndex) => (prevIndex + 1) % project.images.length);
     }, 2000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
+    return () => clearInterval(interval);
   }, [project.images.length]);
 
   return (
-    <div className="relative group mb-4 bg-gray-800 p-4 rounded-lg overflow-hidden">
+    <div className="relative group mb-4 bg-gray-800 p-2 sm:p-4 rounded-lg overflow-hidden">
       <img
         src={project.images[currentImage]}
         alt={project.title}
-        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-75 group-hover:translate-x-75 group-hover:translate-y-75" // No translation to make the scaling look like it's decreasing from bottom right
+        className="w-full h-48 sm:h-60 md:h-64 object-cover transition-transform duration-300 group-hover:scale-110"
       />
-      <h2 className="absolute bottom-4 right-4 text-xl text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ color: color }}>
+      <h2
+        className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 text-lg sm:text-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{ color }}
+      >
         {project.title}
       </h2>
       <a
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute top-2 right-2 p-2 rounded-full bg-blue-600 text-white flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform rotate-45"
+        className="absolute top-2 right-2 p-2 rounded-full bg-blue-600 text-white flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       >
         <FaLongArrowAltDown />
       </a>
     </div>
   );
 };
-
-
 
 export default Project;
